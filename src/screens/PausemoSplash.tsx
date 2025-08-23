@@ -5,12 +5,12 @@ import {
   StyleSheet,
   Animated,
   Dimensions,
-  TouchableOpacity,
 } from 'react-native';
 import { Platform } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { ShadowWrapper, PressButton } from '../components';
-import { PausemoColors } from '../constants/Colors';
+import { Theme } from '../constants/Theme';
+import { colors, darkColors, typography, spacing, borderRadius, animations } from '../constants/Colors';
 import { router } from 'expo-router';
 
 const { width, height } = Dimensions.get('window');
@@ -30,7 +30,7 @@ export default function PausemoSplash() {
       // 1. 배경 페이드인
       Animated.timing(fadeAnim, {
         toValue: 1,
-        duration: 1000,
+        duration: animations.timing.dramatic,
         useNativeDriver: true,
       }).start();
 
@@ -50,7 +50,7 @@ export default function PausemoSplash() {
         Animated.delay(1200),
         Animated.timing(textFadeAnim, {
           toValue: 1,
-          duration: 800,
+          duration: animations.timing.slow,
           useNativeDriver: true,
         }),
       ]).start();
@@ -71,7 +71,7 @@ export default function PausemoSplash() {
         Animated.delay(2000),
         Animated.timing(buttonFadeAnim, {
           toValue: 1,
-          duration: 600,
+          duration: animations.timing.fast,
           useNativeDriver: true,
         }),
       ]).start();
@@ -129,7 +129,12 @@ export default function PausemoSplash() {
         ]}
       >
         <LinearGradient
-          colors={['#1a1a2e', '#16213e', '#1a1a2e', '#0f0f23']}
+          colors={[
+            darkColors.surface[0], 
+            darkColors.surface[1], 
+            darkColors.surface[0], 
+            darkColors.surface[0]
+          ]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
           style={styles.gradient}
@@ -163,7 +168,7 @@ export default function PausemoSplash() {
               style={[
                 styles.ripple,
                 {
-                  borderColor: '#64748b',
+                  borderColor: colors.semantic.neutral,
                   opacity: 0.08 - index * 0.02,
                   transform: [{ rotate: `${index * 15}deg` }],
                 },
@@ -185,7 +190,7 @@ export default function PausemoSplash() {
             },
           ]}
         >
-          <View style={[styles.ripple, { borderColor: '#94a3b8', opacity: 0.06 }]} />
+          <View style={[styles.ripple, { borderColor: colors.text.muted, opacity: 0.06 }]} />
         </Animated.View>
         
         {/* 추가 우주 파동 효과 */}
@@ -207,7 +212,7 @@ export default function PausemoSplash() {
               style={[
                 styles.cosmicRipple,
                 {
-                  borderColor: '#94a3b8',
+                  borderColor: colors.text.muted,
                   opacity: 0.04 - index * 0.015,
                 },
               ]}
@@ -233,10 +238,10 @@ export default function PausemoSplash() {
             },
           ]}
         >
-          <ShadowWrapper variant="medium" style={{ borderRadius: 24 }}>
+          <ShadowWrapper variant="medium" style={{ borderRadius: borderRadius['2xl'] }}>
             <View style={styles.logoSquare}>
               <LinearGradient
-                colors={['#4285f4', '#2563eb', '#1d4ed8']}
+                colors={[colors.primary[400], colors.primary[500], colors.primary[600]]}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}
                 style={styles.logoGradient}
@@ -335,7 +340,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: 1,
     height: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: colors.surface[0],
     borderRadius: 0.5,
     opacity: 0.6,
   },
@@ -374,16 +379,16 @@ const styles = StyleSheet.create({
   content: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 40,
+    paddingHorizontal: spacing.xl,
     flex: 1,
   },
   logoContainer: {
-    marginBottom: 40,
+    marginBottom: spacing.xl,
   },
   logoSquare: {
     width: 120,
     height: 120,
-    borderRadius: 24,
+    borderRadius: borderRadius['2xl'],
     backgroundColor: 'transparent',
     justifyContent: 'center',
     alignItems: 'center',
@@ -407,7 +412,7 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderWidth: 2,
-    borderColor: '#ffffff',
+    borderColor: colors.surface[0],
     borderTopColor: 'transparent',
     borderRightColor: 'transparent',
     borderRadius: 24,
@@ -418,7 +423,7 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     borderWidth: 2,
-    borderColor: '#ffffff',
+    borderColor: colors.surface[0],
     borderBottomColor: 'transparent',
     borderLeftColor: 'transparent',
     borderRadius: 16,
@@ -429,7 +434,7 @@ const styles = StyleSheet.create({
     width: 16,
     height: 16,
     borderWidth: 2,
-    borderColor: '#ffffff',
+    borderColor: colors.surface[0],
     borderTopColor: 'transparent',
     borderRightColor: 'transparent',
     borderRadius: 8,
@@ -439,74 +444,68 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: 4,
     height: 4,
-    backgroundColor: '#ffffff',
+    backgroundColor: colors.surface[0],
     borderRadius: 2,
   },
   appName: {
-    fontSize: 48,
-    fontWeight: 'bold',
-    color: '#ffffff',
-    marginBottom: 16,
+    fontSize: typography.sizes['5xl'],
+    fontWeight: typography.weights.bold,
+    color: darkColors.text.primary,
+    marginBottom: spacing.md,
     textAlign: 'center',
-    fontFamily: Platform.select({
-      ios: 'Inter',
-      android: 'Inter',
-      default: 'System',
-    }),
+    fontFamily: Theme.fonts.primary,
     // 텍스트 글로우 효과
-    ...Platform.select({
-      ios: {
-        textShadowColor: 'rgba(59, 130, 246, 0.5)',
-        textShadowOffset: { width: 0, height: 0 },
-        textShadowRadius: 20,
-      },
-    }),
+    ...(Platform.OS === 'ios' ? {
+      textShadowColor: 'rgba(37, 99, 235, 0.2)',
+      textShadowOffset: { width: 0, height: 0 },
+      textShadowRadius: 20,
+    } : {}),
   },
   tagline: {
-    fontSize: 20,
-    color: PausemoColors.textSecondary,
+    fontSize: typography.sizes.xl,
+    color: darkColors.text.secondary,
     textAlign: 'center',
-    lineHeight: 28,
-    marginBottom: 16,
+    lineHeight: typography.sizes.xl * typography.lineHeights.relaxed,
+    marginBottom: spacing.md,
+    fontFamily: Theme.fonts.krPrimary,
+    fontWeight: typography.weights.medium,
   },
   subtitle: {
-    fontSize: 18,
-    color: PausemoColors.textSecondary,
+    fontSize: typography.sizes.lg,
+    color: darkColors.text.secondary,
     textAlign: 'center',
     opacity: 0.8,
+    fontFamily: Theme.fonts.krPrimary,
+    fontWeight: typography.weights.normal,
   },
   buttonContainer: {
     position: 'absolute',
-    bottom: 60,
-    left: 40,
-    right: 40,
+    bottom: spacing['2xl'],
+    left: spacing.xl,
+    right: spacing.xl,
   },
   startButton: {
     backgroundColor: 'transparent',
-    borderRadius: 25,
+    borderRadius: borderRadius.full,
     overflow: 'hidden',
   },
   buttonGradient: {
-    paddingVertical: 18,
-    paddingHorizontal: 40,
+    paddingVertical: spacing.lg,
+    paddingHorizontal: spacing.xl,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
   },
   startButtonText: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#ffffff',
-    marginRight: 8,
-    fontFamily: Platform.select({
-      ios: 'Inter',
-      android: 'Inter',
-      default: 'System',
-    }),
+    fontSize: typography.sizes.lg,
+    fontWeight: typography.weights.semibold,
+    color: colors.surface[0],
+    marginRight: spacing.sm,
+    fontFamily: Theme.fonts.primary,
   },
   startButtonArrow: {
-    fontSize: 18,
-    color: '#ffffff',
-    fontWeight: '600',
+    fontSize: typography.sizes.lg,
+    color: colors.surface[0],
+    fontWeight: typography.weights.semibold,
   },
 });
