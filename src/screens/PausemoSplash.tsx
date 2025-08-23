@@ -11,12 +11,11 @@ import { Platform } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { ShadowWrapper, PressButton } from '../components';
 import { PausemoColors } from '../constants/Colors';
-import { useOnboarding } from '../contexts/OnboardingContext';
+import { router } from 'expo-router';
 
 const { width, height } = Dimensions.get('window');
 
 export default function PausemoSplash() {
-  const { nextStep } = useOnboarding();
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.8)).current;
   const logoScaleAnim = useRef(new Animated.Value(0)).current;
@@ -114,9 +113,9 @@ export default function PausemoSplash() {
   }, [fadeAnim, scaleAnim, logoScaleAnim, textFadeAnim, buttonFadeAnim]);
 
   const handleStartPress = () => {
-    // 시작하기 버튼을 누르면 A1 화면으로 이동
-    console.log('시작하기 버튼 클릭됨 - A0에서 A1로 이동');
-    nextStep();
+    // 시작하기 버튼을 누르면 메인으로 바로 이동
+    console.log('시작하기 버튼 클릭됨 - 메인으로 이동');
+    router.replace('/(tabs)');
   };
 
   return (
