@@ -1,6 +1,6 @@
-import { Redirect } from 'expo-router';
+import React from 'react';
+import PausemoSplash from '../src/screens/PausemoSplash';
 
 export default function Index() {
-  // 앱 시작 시 항상 onboarding 화면으로 리다이렉트
-  return <Redirect href="/onboarding" />;
+  return <PausemoSplash />;
 }

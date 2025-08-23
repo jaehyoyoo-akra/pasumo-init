@@ -1,24 +1,24 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import ThemedText from '../../src/components/ThemedText';
-import { ThemedView } from '../../src/components/ThemedView';
+import { View, Text, StyleSheet } from 'react-native';
+import { PausemoColors } from '../../src/constants/Colors';
 
 export default function ExploreScreen() {
   return (
-    <ThemedView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.content}>
-        <ThemedText variant="h1">탐색</ThemedText>
-        <ThemedText variant="body" style={styles.description}>
+        <Text style={styles.title}>탐색</Text>
+        <Text style={styles.description}>
           Pausemo 앱의 탐색 기능을 개발 중입니다.
-        </ThemedText>
+        </Text>
       </View>
-    </ThemedView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: PausemoColors.background,
   },
   content: {
     flex: 1,
@@ -26,8 +26,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
   },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: PausemoColors.text,
+    marginBottom: 20,
+    textAlign: 'center',
+  },
   description: {
-    marginTop: 20,
+    fontSize: 16,
+    color: PausemoColors.textSecondary,
     textAlign: 'center',
   },
 });

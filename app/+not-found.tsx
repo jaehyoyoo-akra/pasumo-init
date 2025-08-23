@@ -1,20 +1,19 @@
 import { Link, Stack } from 'expo-router';
-import { StyleSheet } from 'react-native';
-import ThemedText from '../src/components/ThemedText';
-import { ThemedView } from '../src/components/ThemedView';
+import { StyleSheet, View, Text } from 'react-native';
+import { PausemoColors } from '../src/constants/Colors';
 
 export default function NotFoundScreen() {
   return (
     <>
       <Stack.Screen options={{ title: '페이지를 찾을 수 없습니다' }} />
-      <ThemedView style={styles.container}>
-        <ThemedText variant="h1" style={styles.title}>
+      <View style={styles.container}>
+        <Text style={styles.title}>
           페이지를 찾을 수 없습니다.
-        </ThemedText>
+        </Text>
         <Link href="/" style={styles.link}>
-          <ThemedText variant="body">홈 화면으로 돌아가기</ThemedText>
+          <Text style={styles.linkText}>홈 화면으로 돌아가기</Text>
         </Link>
-      </ThemedView>
+      </View>
     </>
   );
 }
@@ -25,14 +24,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
+    backgroundColor: PausemoColors.background,
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 20,
+    color: PausemoColors.text,
   },
   link: {
     marginTop: 15,
     paddingVertical: 15,
+  },
+  linkText: {
+    color: PausemoColors.primary,
+    fontSize: 16,
   },
 });
