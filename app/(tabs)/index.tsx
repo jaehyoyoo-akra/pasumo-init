@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { PausemoColors } from '../../src/constants/Colors';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function HomeScreen() {
   return (
@@ -20,7 +19,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: PausemoColors.background,
+    backgroundColor: '#FFFFFF',
   },
   content: {
     flex: 1,
@@ -31,13 +30,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: PausemoColors.text,
+    color: '#000000',
     marginTop: 20,
     textAlign: 'center',
   },
   description: {
     fontSize: 16,
-    color: PausemoColors.textSecondary,
+    color: '#666666',
     marginTop: 10,
     textAlign: 'center',
   },

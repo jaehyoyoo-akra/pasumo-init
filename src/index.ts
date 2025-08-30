@@ -1,11 +1,12 @@
 // Screens
-export { default as PausemoSplash } from './screens/PausemoSplash';
+export { default as WelcomeScreen } from './screens/WelcomeScreen';
 
 // Components
-export { default as ShadowWrapper } from './components/ShadowWrapper';
 export { default as PressButton } from './components/PressButton';
+export { default as ShadowWrapper } from './components/ShadowWrapper';
 
 // Constants
 export * from './constants/Colors';
-export * from './constants/Theme';
 export * from './constants/TailwindClasses';
+export * from './constants/Theme';
+

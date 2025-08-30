@@ -1,6 +1,6 @@
 import React from 'react';
-import PausemoSplash from './screens/PausemoSplash';
+import WelcomeScreen from './screens/WelcomeScreen';
 
 export default function App() {
-  return <PausemoSplash />;
+  return <WelcomeScreen />;
 }

@@ -1,6 +1,6 @@
-import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import React from 'react';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { ShadowWrapper } from './index';
 
 interface PressButtonProps {
@@ -25,7 +25,7 @@ export default function PressButton({
       case 'start':
       case 'next':
       default:
-        return ['#4285f4', '#2563eb', '#1d4ed8'] as const; // Pausemo 고유 파란색 (시작/다음)
+        return ['#4285f4', '#2563eb', '#1d4ed8'] as const; // 파란색 (시작/다음)
     }
   };
 

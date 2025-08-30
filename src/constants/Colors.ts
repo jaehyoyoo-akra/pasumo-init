@@ -1,5 +1,5 @@
 /**
- * Pausemo 디자인 시스템 - 의학적 정확성과 프리미엄 감성
+ * UX Init 디자인 시스템 - 모던하고 깔끔한 UI
  * 절제된 강조, 깊이감 있는 레이어링, 명확한 위계
  */
 
@@ -71,20 +71,7 @@ export const darkColors = {
   }
 };
 
-// Pausemo 전용 색상 (기존 호환성 유지)
-export const PausemoColors = {
-  primary: colors.primary[500],      // #2563EB
-  secondary: colors.semantic.info,   // #0891B2
-  background: darkColors.surface[0], // #09090B
-  surface: darkColors.surface[1],    // #18181B
-  awakening: '#f59e0b',              // 앰버 (깨어남)
-  emerging: colors.semantic.success, // #059669 (성장)
-  mastering: colors.primary[500],    // #2563EB (숙련)
-  harmonizing: '#8b5cf6',            // 바이올렛 (조화)
-  text: darkColors.text.primary,     // #FAFAFA
-  textSecondary: darkColors.text.secondary, // #A1A1AA
-  accent: colors.semantic.info,      // #0891B2
-};
+
 
 // 기존 호환성을 위한 Colors 객체
 export const Colors = {

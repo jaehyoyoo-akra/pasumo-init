@@ -1,7 +1,7 @@
 import { Platform } from 'react-native';
-import { colors, darkColors, typography, shadows, spacing, borderRadius, animations } from './Colors';
+import { animations, borderRadius, colors, darkColors, shadows, spacing, typography } from './Colors';
 
-// Pausemo 테마 시스템 - 새로운 디자인 시스템 적용
+// UX Init 테마 시스템 - 새로운 디자인 시스템 적용
 export const Theme = {
   // 기본 시스템 색상 (새로운 디자인 시스템 기반)
   colors: {
@@ -26,13 +26,7 @@ export const Theme = {
     inputBackground: colors.surface[2],
     ring: colors.primary[500],
     
-    // Pausemo 정제된 색상 시스템 - 새로운 디자인 시스템
-    pauseBlue: colors.primary[500],           // #2563EB
-    confirmTeal: colors.semantic.info,        // #0891B2
-    declineGray: colors.semantic.neutral,     // #64748B
-    patternDetect: colors.semantic.error,     // #DC2626
-    growthSignal: colors.semantic.success,    // #059669
-    neutralState: colors.text.muted,          // #94A3B8
+
     
     // 그라데이션 백그라운드 색상
     gradientPrimary: `rgba(37, 99, 235, 0.05)`,    // primary[500]

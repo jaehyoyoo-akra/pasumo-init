@@ -31,14 +31,6 @@ module.exports = {
         'input-background': 'var(--input-background)',
         ring: 'var(--ring)',
         
-        // Pausemo 정제된 색상 시스템
-        'pause-blue': 'var(--pause-blue)',
-        'confirm-teal': 'var(--confirm-teal)',
-        'decline-gray': 'var(--decline-gray)',
-        'pattern-detect': 'var(--pattern-detect)',
-        'growth-signal': 'var(--growth-signal)',
-        'neutral-state': 'var(--neutral-state)',
-        
         // Surface 시스템
         'surface-0': 'var(--surface-0)',
         'surface-1': 'var(--surface-1)',

@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "pausemo-init",
-    "slug": "pausemo-init",
+    "name": "init-project",
+    "slug": "init-project",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/images/icon.png",
-    "scheme": "pausemoinit",
+    "scheme": "init",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {

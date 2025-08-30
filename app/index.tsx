@@ -1,6 +1,6 @@
 import React from 'react';
-import PausemoSplash from '../src/screens/PausemoSplash';
+import WelcomeScreen from '../src/screens/WelcomeScreen';
 
 export default function Index() {
-  return <PausemoSplash />;
+  return <WelcomeScreen />;
 }

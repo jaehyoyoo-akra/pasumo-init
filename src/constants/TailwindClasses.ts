@@ -14,13 +14,7 @@ export const TailwindClasses = {
     'bg-border': 'bg-border',
     'bg-input': 'bg-input',
     
-    // Pausemo 색상 (새로운 디자인 시스템)
-    'bg-pause-blue': 'bg-pause-blue',           // #2563EB
-    'bg-confirm-teal': 'bg-confirm-teal',       // #0891B2
-    'bg-decline-gray': 'bg-decline-gray',       // #64748B
-    'bg-pattern-detect': 'bg-pattern-detect',   // #DC2626
-    'bg-growth-signal': 'bg-growth-signal',     // #059669
-    'bg-neutral-state': 'bg-neutral-state',     // #94A3B8
+
     
     // Surface 시스템 (새로운 디자인 시스템)
     'bg-surface-0': 'bg-surface-0',             // #FFFFFF
@@ -41,13 +35,7 @@ export const TailwindClasses = {
     'text-input': 'text-input',
     'text-ring': 'text-ring',
     
-    // Pausemo 텍스트 (새로운 디자인 시스템)
-    'text-pause-blue': 'text-pause-blue',           // #2563EB
-    'text-confirm-teal': 'text-confirm-teal',       // #0891B2
-    'text-decline-gray': 'text-decline-gray',       // #64748B
-    'text-pattern-detect': 'text-pattern-detect',   // #DC2626
-    'text-growth-signal': 'text-growth-signal',     // #059669
-    'text-neutral-state': 'text-neutral-state',     // #94A3B8
+
     
     // Text Hierarchy (새로운 디자인 시스템)
     'text-text-primary': 'text-text-primary',       // #0F172A
@@ -67,13 +55,7 @@ export const TailwindClasses = {
     'border-accent': 'border-accent',
     'border-destructive': 'border-destructive',
     
-    // Pausemo 테두리
-    'border-pause-blue': 'border-pause-blue',
-    'border-confirm-teal': 'border-confirm-teal',
-    'border-decline-gray': 'border-decline-gray',
-    'border-pattern-detect': 'border-pattern-detect',
-    'border-growth-signal': 'border-growth-signal',
-    'border-neutral-state': 'border-neutral-state',
+
     
     // Surface 테두리
     'border-surface-0': 'border-surface-0',
